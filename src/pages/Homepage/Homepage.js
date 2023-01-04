@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from '../../components/Slider/Slider'
-import './style.css'
+import './Homepage.css'
 import axios from 'axios'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import { ThemeContext } from '../../contexts/ThemeContext'

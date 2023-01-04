@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './Review.css'
 import noImage from '../../assets/no-image.png'
 
 function Review({review} ) {

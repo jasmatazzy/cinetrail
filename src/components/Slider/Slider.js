@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './Slider.css'
 import axios from 'axios'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Rating from '../Rating/Rating';

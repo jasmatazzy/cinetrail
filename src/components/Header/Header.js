@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import './style.css'
+import './Header.css'
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import { ThemeContext } from '../../contexts/ThemeContext'
 import {Link} from 'react-router-dom'

@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './MovieCard.css'
 import Rating from '../Rating/Rating';
 import {Link} from 'react-router-dom'
 
