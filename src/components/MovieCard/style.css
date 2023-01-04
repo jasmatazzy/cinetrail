@@ -1,0 +1,38 @@
+
+.movie-info-top{
+    position: absolute;
+    top: 0;
+    color: var(--red);
+    opacity: 0;
+    padding: 10px;
+}
+
+.movie-info-bottom{
+    position: absolute;
+    bottom: 0;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    padding: 10px;
+}
+
+.popular-card:hover .movie-info-top,
+.popular-card:hover .movie-info-bottom{
+    opacity: 1;
+     animation: myAnim 2s ease 0s 1 normal forwards; 
+}
+
+@keyframes myAnim {
+	0% {
+		visibility: hidden;
+		transform: translateY(50px);
+	}
+
+	100% {
+		visibility: visible;
+		transform: translateY(0);
+	}
+}

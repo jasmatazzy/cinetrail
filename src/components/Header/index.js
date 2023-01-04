@@ -1,40 +1,44 @@
-import React from 'react'
-import moon from "../../assets/moon.svg"
-import sun from "../../assets/sun.svg"
+import React, {useContext} from 'react'
+import './style.css'
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import { ThemeContext } from '../../contexts/ThemeContext'
+import {Link} from 'react-router-dom'
 
-const Header = () => {
 
-  const headerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width:"100%"
-  }
+function Header() {
+    const {darkMode, setDarkMode} = useContext(ThemeContext);
 
-  const lightDarkModeStyle = {
-    background: "black",
-    // width: "35px",
-    // height: "40px",
-    borderRadius: "24px",
-  }
+    const handleTheme = ()=>{
+
+        setDarkMode(!darkMode);
+
+        localStorage.setItem("darkMode", !darkMode);
+    }
 
   return (
-    <div style={headerStyle}>
-      <div style={{color:"red", fontSize:"35px"}}>
-        CineTrail
-      </div>
+    <div className={darkMode?"header-container":"header-container header-light" }>
+        <Link to="/" className="logo">CineTrail</Link>
+        <input placeholder="Search movies..." type="text" className="search-input"/>
+        <div className="header-buttons-container">
+            {
+                darkMode?
+                <div className="theme-buttons" >
+                    <MdOutlineLightMode className="theme-icon" 
+                    onClick={handleTheme} />
+                    <MdOutlineDarkMode className="theme-icon theme-icon-active" />
+                </div>
+                :
+                <div className="theme-buttons" >
+                    <MdOutlineLightMode className="theme-icon theme-icon-active" />
+                    <MdOutlineDarkMode className="theme-icon " 
+                    onClick={handleTheme}/>
+                </div>
+            }
 
-      <div>
-        <input type="text" placeholder="Search movies..."></input>
-      </div>
-
-      <div style={{display:"flex"}}>
-        <div style={lightDarkModeStyle}>
-          <img src={moon} alt="light-dark" />
-          <img src={sun} alt="light-dark" />
+            <MdOutlineLightMode />
+            <MdOutlineDarkMode />
+            <button className="create-account-btn">Create an account</button>
         </div>
-        <button>Create an account</button>
-      </div>
     </div>
   )
 }
